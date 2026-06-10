@@ -9,17 +9,17 @@
 
 typedef struct {
     char *word;
-    long long total_freq;
+    long long totalFreq;
 } WordData;
 
-WordData *load_vocab(const char *filepath, size_t *out_count);
+WordData *loadVocab(const char *filepath, size_t *outCount);
 
-int accumulate_frequencies(const char *filepath, WordData *data, size_t word_count,
-                           size_t *out_D, size_t *out_W, long long *out_N);
+int accumulateFrequencies(const char *filepath, WordData *data, size_t wordCount,
+                          size_t *outD, size_t *outW, long long *outN);
 
 // Menggunakan pointer-to-pointer agar aman saat realloc
-void compact_word_data(WordData **data, size_t *word_count);
+void compactWordData(WordData **data, size_t *wordCount);
 
-void free_word_data(WordData **data, size_t *word_count);
+void freeWordData(WordData **data, size_t *wordCount);
 
 #endif
