@@ -86,7 +86,7 @@ WordData *load_bow_data(const char *vocab_path, const char *docword_path, int *o
             continue;
         }
 
-        strncpy(data[word_index].word, line, MAX_WORD_LEN - 1);
+        strncpy(data[word_index].word, line, MAX_WORD_LEN);
         data[word_index].word[MAX_WORD_LEN - 1] = '\0';
 
         word_index++;
