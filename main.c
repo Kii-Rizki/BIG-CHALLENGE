@@ -25,15 +25,14 @@ int main(void) {
     char docword_file[256];
     char vocab_file[256] = {0};
 
-    // 1. Meminta input dari user sesuai petunjuk PDF
+    // Meminta input dari user
     printf("Tentukan file docword: ");
     if (scanf("%255s", docword_file) != 1) {
         fprintf(stderr, "Gagal membaca input file.\n");
         return EXIT_FAILURE;
     }
 
-    // Fitur Cerdas: Otomatis mencari nama file vocab berdasarkan input docword
-    // Contoh: "docword.kos.txt" -> "vocab.kos.txt"
+    // Otomatis mencari nama file vocab berdasarkan input docword
     char *ptr = strstr(docword_file, "docword");
     if (ptr != NULL) {
         int prefix_len = ptr - docword_file;
